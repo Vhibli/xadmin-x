@@ -2,6 +2,8 @@
 
 Drop-in replacement of Django admin comes with lots of goodies, fully extensible with plugin support, pretty UI based on Twitter Bootstrap.
 
+This project forked from [xadmin](https://github.com/sshwsfc/xadmin) aim to support django 3.x.
+
 ## Features
 
 + Drop-in replacement of Django admin
@@ -12,18 +14,7 @@ Drop-in replacement of Django admin comes with lots of goodies, fully extensible
 + Dashboard page with widget support
 + In-site bookmarking
 + Full CRUD methods
-
-## Screenshots
-
-![Actions](https://raw.github.com/sshwsfc/django-xadmin/docs-chinese/docs/images/plugins/action.png)
-
-![Filter](https://raw.github.com/sshwsfc/django-xadmin/docs-chinese/docs/images/plugins/filter.png)
-
-![Chart](https://raw.github.com/sshwsfc/django-xadmin/docs-chinese/docs/images/plugins/chart.png) 
-
-![Export Data](https://raw.github.com/sshwsfc/django-xadmin/docs-chinese/docs/images/plugins/export.png)
-
-![Edit inline](https://raw.github.com/sshwsfc/django-xadmin/docs-chinese/docs/images/plugins/editable.png)
++ django 3.x supporting
 
 ## Get Started
 
@@ -37,7 +28,7 @@ pip install xadmin-x
 
 ```
 
-### Install Requires 
+### Install Requires
 
 + `django`_ >=3.0
 + `django-crispy-forms`_ >=1.6.0 (For xadmin crispy forms)
