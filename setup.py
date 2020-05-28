@@ -5,12 +5,13 @@ from setuptools import setup
 # version = ".".join([str(v) for v in version_tuple])
 
 setup(
-    name='xadmin',
+    name='xadmin-x',
     version='0.6.1',
-    description='Drop-in replacement of Django admin comes with lots of goodies, fully extensible with plugin support, pretty UI based on Twitter Bootstrap.',
-    long_description=open('README.rst', encoding='utf-8').read(),
-    author='sshwsfc',
-    author_email='sshwsfc@gmail.com',
+    description='Drop-in replacement of Django 3.x admin comes with lots of goodies, fully extensible with plugin support, pretty UI based on Twitter Bootstrap.',
+    long_description=open('README-pypi.md', encoding='utf-8').read(),
+    long_description_content_type='text/markdown',
+    author='zgljl2012',
+    author_email='zgljl2012@gmail.com',
     license=open('LICENSE', encoding='utf-8').read(),
     url='http://www.xadmin.io',
     download_url='http://github.com/sshwsfc/django-xadmin/archive/master.zip',
@@ -32,7 +33,7 @@ setup(
         'Reversion': ['django-reversion>=2.0.0'],
     },
     zip_safe=False,
-    keywords=['admin', 'django', 'xadmin', 'bootstrap'],
+    keywords=['admin', 'django', 'xadmin', 'bootstrap', 'django 3.x'],
     classifiers=[
         'Development Status :: 4 - Beta',
         'Environment :: Web Environment',
