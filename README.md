@@ -52,6 +52,10 @@ pip install xadmin-x
 
 ## Changelogs
 
+### 0.7.3
+
++ support Django 3.x
+
 ### 0.6.0
 
 + Compact with Django1.9.
