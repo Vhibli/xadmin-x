@@ -1,9 +1,11 @@
 from __future__ import absolute_import
 import django
+from django.core.exceptions import FieldDoesNotExist
 from django.db import models
 from django.db.models.sql.query import LOOKUP_SEP
 from django.db.models.deletion import Collector
 from django.db.models.fields.related import ForeignObjectRel
+from django.contrib.admin.utils import label_for_field, help_text_for_field
 from django.utils import formats
 import six
 from django.utils.safestring import mark_safe
@@ -274,7 +276,7 @@ def lookup_field(name, obj, model_admin=None):
     opts = obj._meta
     try:
         f = opts.get_field(name)
-    except models.FieldDoesNotExist:
+    except FieldDoesNotExist:
         # For non-field values, the value is either a method, property or
         # returned via a callable.
         if callable(name):

@@ -2,13 +2,6 @@
 
 import sys
 import os.path
-from django.utils import six
-
-if six.PY2 and sys.getdefaultencoding()=='ascii':
-    import imp
-    imp.reload(sys)
-    sys.setdefaultencoding('utf-8')
-
 from django.utils.translation import ugettext_lazy as _
 
 PROJECT_ROOT = os.path.join(
@@ -102,17 +95,14 @@ STATICFILES_FINDERS = (
 # Make this unique, and don't share it with anybody.
 SECRET_KEY = '5=!nss_+^nvyyc_j(tdcf!7(_una*3gtw+_8v5jaa=)j0g^d_2'
 
-MIDDLEWARE_CLASSES = (
+MIDDLEWARE = (
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
-    'django.contrib.auth.middleware.SessionAuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
-    'django.middleware.locale.LocaleMiddleware',
-    # Uncomment the next line for simple clickjacking protection:
-    # 'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'django.middleware.clickjacking.XFrameOptionsMiddleware',
 )
 
 ROOT_URLCONF = 'demo.urls'

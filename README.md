@@ -55,6 +55,7 @@ pip install xadmin-x
 ### 0.7.3
 
 + support Django 3.x
++ refine Demo with django3.x
 
 ### 0.6.0
 

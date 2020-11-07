@@ -1,7 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import Group
 from django.conf import settings
-from django.utils.encoding import python_2_unicode_compatible
 
 AUTH_USER_MODEL = getattr(settings, 'AUTH_USER_MODEL', 'auth.User')
 
@@ -23,7 +22,6 @@ SERVICE_TYPES = (
     ('mix', u"Mix"),
 )
 
-@python_2_unicode_compatible
 class IDC(models.Model):
     name = models.CharField(max_length=64)
     description = models.TextField()
@@ -44,9 +42,8 @@ class IDC(models.Model):
         verbose_name_plural = verbose_name
 
 
-@python_2_unicode_compatible
 class Host(models.Model):
-    idc = models.ForeignKey(IDC)
+    idc = models.ForeignKey(IDC, on_delete=models.DO_NOTHING)
     name = models.CharField(max_length=64)
     nagios_name = models.CharField(u"Nagios Host ID", max_length=64, blank=True, null=True)
     ip = models.GenericIPAddressField(blank=True, null=True)
@@ -72,7 +69,7 @@ class Host(models.Model):
     service_type = models.CharField(max_length=32, choices=SERVICE_TYPES)
     description = models.TextField()
 
-    administrator = models.ForeignKey(AUTH_USER_MODEL, verbose_name="Admin")
+    administrator = models.ForeignKey(AUTH_USER_MODEL, verbose_name="Admin", on_delete=models.DO_NOTHING)
 
     def __str__(self):
         return self.name
@@ -82,9 +79,8 @@ class Host(models.Model):
         verbose_name_plural = verbose_name
 
 
-@python_2_unicode_compatible
 class MaintainLog(models.Model):
-    host = models.ForeignKey(Host)
+    host = models.ForeignKey(Host, on_delete=models.DO_NOTHING)
     maintain_type = models.CharField(max_length=32)
     hard_type = models.CharField(max_length=16)
     time = models.DateTimeField()
@@ -100,7 +96,6 @@ class MaintainLog(models.Model):
         verbose_name_plural = verbose_name
 
 
-@python_2_unicode_compatible
 class HostGroup(models.Model):
 
     name = models.CharField(max_length=32)
@@ -116,7 +111,6 @@ class HostGroup(models.Model):
         return self.name
 
 
-@python_2_unicode_compatible
 class AccessRecord(models.Model):
     date = models.DateField()
     user_count = models.IntegerField()

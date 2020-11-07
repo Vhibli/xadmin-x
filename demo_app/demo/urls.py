@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-from django.conf.urls import include, url
+from django.urls import path
 
 # Uncomment the next two lines to enable the admin:
 import xadmin
@@ -12,6 +12,6 @@ xversion.register_models()
 from django.contrib import admin
 
 urlpatterns = [
-    url(r'^admin/', include(admin.site.urls)),
-    url(r'^', include(xadmin.site.urls))
+    path(r'admin/', admin.site.urls),
+    path(r'', xadmin.site.urls)
 ]
